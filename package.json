@@ -1,0 +1,24 @@
+{
+  "name": "waterpump",
+  "version": "0.1.0",
+  "description": "multi purpose dependency injection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeyrogues/waterpump.git"
+  },
+  "keywords": [
+    "di",
+    "dependency injection",
+    "hexagonal"
+  ],
+  "author": "Joey Rogues",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joeyrogues/waterpump/issues"
+  },
+  "homepage": "https://github.com/joeyrogues/waterpump#readme"
+}
