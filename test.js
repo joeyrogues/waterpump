@@ -24,13 +24,27 @@ describe('waterpump', () => {
       }
     }))
 
-    register('B', () => ({
+    const B = register('B', (ports) => ({
       f() {
         return 'This is B.f'
       }
     }))
 
     expect(A.f()).toEqual('This is B.f')
+  })
+
+  it('should expode when A depends on B but B was not injected', () => {
+    const { register } = waterpump()
+
+    const A = register('A', (ports) => ({
+      f() {
+        return ports.B.f()
+      }
+    }))
+
+    expect(() => {
+      A.f()
+    }).toThrowError(`Cannot read property 'f' of undefined`)
   })
 
   it('should inject two modules, where with circular dependency', () => {
@@ -61,6 +75,6 @@ describe('waterpump', () => {
 
     expect(() => {
       register('A', () => ({}))
-    }).toThrow(Error);
+    }).toThrowError('Module A already injected');
   })
 })
