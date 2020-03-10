@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x, 12.x]
-        something: [ "joey", "something", "ok then" ]
 
     steps:
     - uses: actions/checkout@v2
