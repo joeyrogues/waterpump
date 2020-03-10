@@ -24,8 +24,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install -g yarn
-    - run: yarn
-    - run: yarn test
+    - run: npm test
       env:
         CI: true
