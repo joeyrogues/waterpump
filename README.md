@@ -1,4 +1,4 @@
-![Node.js CI](https://github.com/joeyrogues/waterpump/workflows/Node.js%20CI/badge.svg?branch=develop)
+![Unit Tests](https://github.com/joeyrogues/waterpump/workflows/Unit%20Tests/badge.svg)
 
 <img src="waterpump.png" width="200">
 
