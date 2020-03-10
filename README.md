@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/joeyrogues/waterpump/workflows/Node.js%20CI/badge.svg?branch=develop)
+
 <img src="waterpump.png" width="200">
 
 # Waterpump
