@@ -1,4 +1,4 @@
-![waterpump](waterpump.png =250x250)
+<img src="waterpump.png" width="120">
 
 # Waterpump
 
