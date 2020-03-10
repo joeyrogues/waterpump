@@ -1,4 +1,4 @@
-![waterpump](waterpump.png)
+![waterpump](waterpump.png | width=200)
 
 # Waterpump
 
