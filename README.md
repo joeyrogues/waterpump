@@ -1,4 +1,4 @@
-<img src="waterpump.png" width="120">
+<img src="waterpump.png" width="200">
 
 # Waterpump
 
