@@ -77,4 +77,50 @@ describe('waterpump', () => {
       register('A', () => ({}))
     }).toThrowError('Module A already injected');
   })
+
+  describe('mocks', () => {
+    it('should ignore any accessed path', () => {
+      const { mock: { ignore } } = waterpump()
+      expect(
+        ignore
+          .a
+          .b({ a: 234 })[123]
+          .stuff()
+          .lol
+          .oki()
+          .then('nevermind')
+          .that[0]
+          .will['work']
+          .well
+          .well
+      )
+    })
+
+    it('should forward values to next callback', () => {
+      const { mock: { callback } } = waterpump()
+      const mod = {
+        f: callback(null, 1, 2, 'joey')
+      }
+
+      mod.f('ignored', 'more_ignored', (err, one, two, joey) => {
+        expect(err).toBe(null)
+        expect(one).toBe(1)
+        expect(two).toBe(2)
+        expect(joey).toBe('joey')
+      })
+    })
+
+    it('should forward err to next callback', () => {
+      const { mock: { callback } } = waterpump()
+
+      const errorMessage = `${Math.floor(Math.random() * 1000)}`
+      const mod = {
+        f: callback(new Error(errorMessage))
+      }
+
+      mod.f('ignored', 'more_ignored', (err, ...values) => {
+        expect(err.message).toEqual(errorMessage)
+      })
+    })
+  })
 })
